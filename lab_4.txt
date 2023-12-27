@@ -1,0 +1,250 @@
+
+#include <iostream>
+#include <string> 
+#include <locale.h> 
+
+using namespace std;
+
+class Inventor {
+public:
+	int x;
+	string name;
+	string namefirm;
+	string type;
+
+public:
+	Inventor() {
+
+		this->x = 0;
+		this->name = " ";
+		this->namefirm = " ";
+		cout << "I" << endl;
+	}
+public:
+
+	Inventor(int x, string name, string namefirm)
+	{
+		this->x = x;
+		this->name = name;
+		this->namefirm = namefirm;
+
+	}
+
+	void printsInventor()
+	{
+		cout << "number " << this->x << endl;
+		cout << "name " << this->name << endl;
+		cout << "namefirm " << this->namefirm << endl;
+	}
+
+
+};
+
+class Table : public Inventor {
+public:
+
+	string type;
+
+	Table()
+	{
+		this->x = 0;
+		this->name = " ";
+		this->namefirm = " ";
+		this->type = " ";
+		cout << "T" << endl;
+	}
+
+	Table(string type, Inventor& Inv)
+	{
+		this->x = Inv.x;
+		this->name = Inv.name;
+		this->namefirm = Inv.namefirm;
+		this->type = type;
+	}
+
+
+
+	void printsInventor()
+	{
+		cout << "number " << this->x << endl;
+		cout << "name " << this->name << endl;
+		cout << "namefirm " << this->namefirm << endl;
+		cout << "type " << this->type << endl;
+	}
+
+
+	void printsIn()
+	{
+
+		cout << "type " << this->type << endl;
+	}
+
+
+
+
+};
+class Monitor : public Inventor {
+public:
+
+	string type;
+
+	Monitor()
+	{
+		this->x = 0;
+		this->name = " ";
+		this->namefirm = " ";
+		this->type = " ";
+		cout << "Mon" << endl;
+	}
+
+	Monitor(string int_type, Inventor& Inv)
+	{
+		this->x = Inv.x;
+		this->name = Inv.name;
+		this->namefirm = Inv.namefirm;
+		type = int_type;
+	}
+
+
+
+	void printsInventor()
+	{
+		cout << "number " << this->x << endl;
+		cout << "name " << this->name << endl;
+		cout << "namefirm " << this->namefirm << endl;
+		cout << "type " << this->type << endl;
+	}
+};
+
+class Mouse : public Inventor {
+public:
+
+	string type;
+
+	Mouse()
+	{
+		this->x = 0;
+		this->name = " ";
+		this->namefirm = " ";
+		type = " ";
+		cout << "Mou" << endl;
+	}
+
+	Mouse(string in_type, Inventor& Inv)
+	{
+		this->x = Inv.x;
+		this->name = Inv.name;
+		this->namefirm = Inv.namefirm;
+		type = in_type;
+	}
+
+
+
+	void printsInventor()
+	{
+		cout << "number " << this->x << endl;
+		cout << "name " << this->name << endl;
+		cout << "namefirm " << this->namefirm << endl;
+		cout << "type " << this->type << endl;
+	}
+};
+
+class Chair : public Inventor {
+public:
+
+	string type;
+
+	Chair()
+	{
+		this->x = 0;
+		this->name = " ";
+		this->namefirm = " ";
+		type = " ";
+		cout << "Cha" << endl;
+	}
+
+	Chair(string in_type, Inventor& Inv)
+	{
+		this->x = Inv.x;
+		this->name = Inv.name;
+		this->namefirm = Inv.namefirm;
+		type = in_type;
+	}
+
+
+
+	void printsInventor()
+	{
+		cout << "number " << this->x << endl;
+		cout << "name " << this->name << endl;
+		cout << "namefirm " << this->namefirm << endl;
+		cout << "type " << this->type << endl;
+	}
+};
+
+class Computer : public Inventor {
+public:
+
+	string type;
+
+	Computer()
+	{
+		this->x = 0;
+		this->name = " ";
+		this->namefirm = " ";
+		type = " ";
+		cout << "Com" << endl;
+	}
+
+	Computer(string in_type, Inventor& Inv)
+	{
+		this->x = Inv.x;
+		this->name = Inv.name;
+		this->namefirm = Inv.namefirm;
+		type = in_type;
+	}
+
+
+
+	void printsInventor()
+	{
+		cout << "number " << this->x << endl;
+		cout << "name " << this->name << endl;
+		cout << "namefirm " << this->namefirm << endl;
+		cout << "type " << this->type << endl;
+	}
+};
+
+int main()
+{
+	setlocale(LC_ALL, "rus");
+
+	Table T;
+	Inventor Inventor1(1, "ghu", "IKEI");
+	Table Table1("крассного дерева", Inventor1);
+	Table1.printsInventor();
+	//Table1.print();
+
+
+
+	Monitor m;
+	Inventor Inventor2(1, "donald", "dell");
+	Monitor Monitor1("на 27 дюймов", Inventor2);
+	Monitor1.printsInventor();
+
+	Mouse M;
+	Inventor Inventor3(1, "mikky", "AMD");
+	Mouse Mouse1("Без проводная", Inventor3);
+	Mouse1.printsInventor();
+
+	Chair c;
+	Inventor Inventor4(1, "uno", "IKEI");
+	Chair Chair1("лакерованный", Inventor4);
+	Chair1.printsInventor();
+
+	Computer C;
+	Inventor Inventor5(1, "vod", "intel");
+	Computer Computer1("С водиным охлождением", Inventor5);
+	Computer1.printsInventor();
+
+}
