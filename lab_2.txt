@@ -1,0 +1,179 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <vector>
+#include <iostream>
+
+using namespace std;
+
+
+class Inventor
+{
+public:
+
+	int x;
+	string name;
+	string namefirm;
+	string type;
+
+
+
+	Inventor()
+	{
+		this->x = 0;
+
+		this->name = " ";
+		this->namefirm = " ";
+		this->type = " ";
+	}
+	Inventor(int x, string name, string namefirm, string type)
+	{
+		this->x = x;
+
+		this->name = name;
+		this->namefirm = namefirm;
+		this->type = type;
+	}
+	void printsInventor()
+	{
+
+		cout << "number " << this->x << endl;
+		cout << "name " << this->name << endl;
+		cout << "namefirm " << this->namefirm << endl;
+		cout << "type " << this->type << endl;
+
+	}
+
+	Inventor(string, string, int x);
+	Inventor(const Inventor& I);
+};
+
+
+Inventor::Inventor(string name, string namefirm, int x)
+{
+	x = x;
+	name = name;
+	namefirm = namefirm;
+
+}
+
+Inventor::Inventor(const Inventor& I)
+{
+	this->x = I.x ;
+	this->name = I.name;
+	this->namefirm = I.namefirm;
+	cout << " Copied " << endl;
+}
+
+
+void findType(string Type, vector<Inventor>& mouse)
+{
+	for (int i = 0; i < 11; i++)
+	{
+
+		if (Type == mouse[i].type)
+		{
+
+			mouse[i].printsInventor();
+		}
+	}
+}
+
+int main()
+{
+	/*string r;
+	cin >> r;
+	cout << "r" << r << endl;
+	*/
+	vector <Inventor> Temp;
+
+
+	Inventor A(1, "mikky", "dell", "mouse");
+	Inventor B(2, "mini", "dell", "mouse");
+	//Inventor C(3, "pluto", "dell", "mouse");
+	//Inventor D(4, "gufy", "dell", "mouse");
+	//Inventor E(5, "eggman", "AMD", "mouse");
+	//Inventor F(6, "sonic", "intel", "mouse");
+
+	A = B;
+	A.printsInventor();
+	/*Temp.push_back(A);
+	//Temp.push_back(B);
+	//Temp.push_back(C);
+	//Temp.push_back(D);
+	//Temp.push_back(E);
+	//Temp.push_back(F);
+
+	Inventor G = A;
+	A.printsInventor();
+	G.printsInventor();
+
+
+	Temp.push_back(G);
+	Temp.push_back(G);
+	Temp.push_back(G);
+	Temp[1].printsInventor();
+	G.printsInventor();
+	//for ()
+		//Temp[0].printsInventor();
+
+	//Temp[0].name;
+	//std::cout << "name " << Temp[3].name << std::endl;
+
+	/*if (r == "mouse")
+		Temp[0].printsInventor();
+		Temp[1].printsInventor();
+		Temp[2].printsInventor();
+		Temp[3].printsInventor();
+		Temp[4].printsInventor();
+		Temp[5].printsInventor();
+		Temp[6].printsInventor();
+	 
+
+
+	Inventor N(1, "donald", "dell", "monitor");
+	Inventor W(2, "soler", "dell", "monitor");
+	Inventor U(3, "latrec", "dell", "monitor");
+	Inventor R(4, "lascutic", "dell", "monitor");
+	Inventor T(5, "gvin", "dell", "monitor");
+	Inventor Y(6, "alecsandr", "dell", "monitor");
+
+	Temp.push_back(N);
+	Temp.push_back(W);
+	Temp.push_back(U);
+	Temp.push_back(R);
+	Temp.push_back(T);
+	Temp.push_back(Y);
+
+
+	Inventor A = B;
+
+
+	findType(r, Temp);
+
+	/*
+	if (r == "mouse")
+	{
+		Temp[0].printsInventor();
+		Temp[1].printsInventor();
+		Temp[2].printsInventor();
+		Temp[3].printsInventor();
+		Temp[4].printsInventor();
+		Temp[5].printsInventor();
+	}
+
+	if (r == "monitor")
+	{
+		Temp[6].printsInventor();
+		Temp[7].printsInventor();
+		Temp[8].printsInventor();
+		Temp[9].printsInventor();
+		Temp[10].printsInventor();
+		Temp[11].printsInventor();
+	}
+
+	*/
+	
+	return 0;
+}
